@@ -2,6 +2,9 @@ const express = require('express')
 const app = express()
 const hbs = require('hbs');
 require('./hbs/helpers')
+
+const port = process.env.PORT || 3000;
+
 app.use(express.static(__dirname + '/public'));
 
 //Establecer el motor para las viwe
@@ -38,6 +41,6 @@ app.get('/data', (req, res) => {
     res.send('data');
 }) */
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log("Servidor Iniciado, escuchando en el puerto 3000");
 })
